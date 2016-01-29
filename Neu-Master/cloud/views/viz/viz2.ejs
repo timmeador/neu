@@ -1,0 +1,24 @@
+<!-- Include the header partial -->
+<% include ../_header %>
+
+<link rel='stylesheet' href='/stylesheets/colorSet<%= colorSet %>.css'/>
+</head>
+<body>
+
+<div class="globalnav"> <a href="/about/">NEU</a><a class="prevbtn" href="/prev/"></a><a class="nextbtn" href="/next/"></a></div>
+
+<!-- content -->
+
+<div class="main_content">
+    
+    <h1>Viz2</h1>
+
+    <% var pastMonth = formatMonth(new Date());%>
+    <% posts.forEach(function(post,i) { %>
+      <div class="post_link">
+         <p><%= post.get("title") %></p>
+      </div>
+    <% }); %>
+</div>
+<!-- Include the footer partial -->
+<% include ../_footer %>

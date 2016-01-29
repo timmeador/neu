@@ -1,0 +1,27 @@
+.backgroundDark {
+	background-color: #04ED9C;
+}
+.backgroundLight {
+	background-color: #fff;
+}
+
+body {
+	background: #FFE3D9;
+	color: #04ED9C;
+}
+
+a, a:hover, a:visited, a:active {
+	color: #04ED9C;
+}
+
+.post h5{
+	color: #04ED9C;
+}
+
+.post .content p a {
+	color: #04ED9C;
+}
+
+.post_link h5 {
+	color: #04ED9C;
+}

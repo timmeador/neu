@@ -1,0 +1,64 @@
+<!-- Include the header partial -->
+<% include ../_header %>
+
+<link rel='stylesheet' href='/stylesheets/colorSet<%= colorSet %>.css'/>
+</head>
+<body>
+
+<div class="globalnav"> <a href="/about/">NEU</a><a class="prevbtn" href="/prev/"></a><a class="nextbtn" href="/next/"></a></div>
+
+<!-- content -->
+
+<div class="main_content">
+    
+  	<% var pastMonth = formatMonth(new Date());%>
+  	<% posts.forEach(function(post,i) { %>
+  	<% var currentMonth = formatMonth(post.get("date")); %>
+  		<div class="post_link">
+
+        <% if (post.get("icons") != undefined) { %>
+          <% var file = post.get("icons").get("file"); %>
+          
+          <% console.log("rot:" + rot);%>
+        <% } else { %>
+          <% var file = ""; %>
+          <% var rot = ""; %>
+        <% } %>
+
+          <% if (post.get("justify") == true) { %>
+            <h1><a href="<%= '/posts/' + post.id %>"><%= post.get("title") %></a></h1>
+            <h5><%- snippet(post.get("body"), 210) %></h5>            
+            <img class="icon" data-src="<%= ((file != "") ? file.url() : "")%>" data-class="<%= post.get("icon") %>" alt="">
+
+          <% } else { %>
+            <img class="icon" data-src="<%= ((file != "") ? file.url() : "")%>" data-class="<%= post.get("icon") %>" alt="">
+  		  		<h5><%- snippet(post.get("body"), 210) %></h5>
+  		  		<h1><a href="<%= '/posts/' + post.id %>"><%= post.get("title") %></a></h1>
+          <% } %>
+          
+  		</div>
+		
+		<% if (pastMonth != currentMonth) { %>
+			<div class="post_link divider"><h1><a id=<%= formatMonth(post.get('date')) %>>-</a></h1></div>
+		<% } %>
+
+		<% pastMonth = currentMonth; %>
+
+    <% }); %>
+</div>
+
+<div class="scroll_dot"></div>
+<div class="sidebar" id="sidebar_nav">
+  	<% months.forEach(function(month,i) { %>
+  		<div class="month_link" data-height="<%= month.height %>">
+  			<% if (i == 0) { %>
+  				<a href="#Top"><%=  month.mmm %><br><%= month.year %></a>	
+  			<% } else { %>
+	  			<a href="<%= '#' + month.name %>"><%=  month.mmm %><br><%= month.year %></a>
+  			<% } %>
+  		</div>
+    <% }); %>
+</div>
+
+<!-- Include the footer partial -->
+<% include ../_footer %>

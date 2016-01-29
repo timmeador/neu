@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "AnyBlog": {
+      "applicationId": "GSXdMEzxCgyUbjILgPzw5qzRJk2gW9aV8R3p3DSB"
+    },
+    "_default": {
+      "link": "AnyBlog"
+    }
+  }
+}

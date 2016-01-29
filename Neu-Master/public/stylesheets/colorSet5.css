@@ -1,0 +1,27 @@
+.backgroundDark {
+	background-color: #38BEF2;
+}
+.backgroundLight {
+	background-color: #fff;
+}
+
+body {
+	background: #ECF9D9;
+	color: #38BEF2;
+}
+
+a, a:hover, a:visited, a:active {
+	color: #38BEF2;
+}
+
+.post h5{
+	color: #38BEF2;
+}
+
+.post .content p a {
+	color: #38BEF2;
+}
+
+.post_link h5 {
+	color: #38BEF2;
+}
